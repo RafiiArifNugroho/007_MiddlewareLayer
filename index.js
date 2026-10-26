@@ -208,9 +208,11 @@ app.delete(
 
 // ROUTE TIDAK DITEMUKAN
 app.use((req, res) => {
-    res,
-    'Endpoint tidak ditemukan',
-    404
+    return errorResponse(
+        res,
+        'Endpoint tidak ditemukan',
+        404
+    )
 })
 
 // GLOBAL ERROR HANDLER
